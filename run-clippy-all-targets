@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# You can install other Rust targets for checking purposes, even if
+# you don't have linkers or whatever to actually support building
+# executables.  For example to check Windows and Mac builds on Linux,
+# add these targets:
+#
+#   rustup target add x86_64-pc-windows-msvc
+#   rustup target add x86_64-apple-darwin
+
+set -e
+
+rustup target list |
+    grep installed |
+    while read target rest
+    do
+        echo "=== Target: $target"
+        cargo clippy --target=$target
+    done

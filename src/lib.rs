@@ -20,5 +20,7 @@ macro_rules! retry {
 mod tcpstream;
 pub use tcpstream::TcpLink;
 
+#[cfg(target_family = "unix")]
 mod unixstream;
+#[cfg(target_family = "unix")]
 pub use unixstream::UnixStreamLink;
