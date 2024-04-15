@@ -1,6 +1,6 @@
 [package]
 name = "pipebuf_mio"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 authors = ["Jim Peters <jim@uazu.net>"]
 
@@ -15,5 +15,5 @@ keywords = ["stream","io","async","pipebuf"]
 categories = [ "asynchronous", "network-programming" ]
 
 [dependencies]
-pipebuf = "0.2"
+pipebuf = "0.3"
 mio = { version = "0.8", features = ["net"] }
