@@ -153,7 +153,9 @@ impl TcpLink {
             Ok(_) => {
                 if prd.is_empty() && prd.has_pending_eof() {
                     let shutdown = if prd.is_aborted() {
-                        pbuf.wr.abort();
+                        if !pbuf.wr.is_eof() {
+                            pbuf.wr.abort();
+                        }
                         std::net::Shutdown::Both
                     } else {
                         std::net::Shutdown::Write

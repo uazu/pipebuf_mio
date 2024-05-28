@@ -4,6 +4,13 @@ This project follows Rust semantic versioning.
 
 <!-- see keepachangelog.com for format ideas -->
 
+## 0.2.1 (2024-05-28)
+
+### Fixed
+
+- Fixed panic due to repeated `abort` in both TCP and Unix streams
+
+
 ## 0.2.0 (2024-04-15)
 
 Update to `pipebuf` 0.3
